@@ -1,14 +1,25 @@
-class api::V1::WorkshopsController < ApplicationController
+class Api::V1::WorkshopsController < ApplicationController
 
   def validate
-    @workshop = Workshop.find(params[:id])
+    @workshops = Workshop.where(folio: params[:folio])
 
-    dias = Date.now - @workshop.created_at
+    json_reponse = []
+    i = 0
+    @workshops.each do |workshop|
+      dias = Time.now - workshop.created_at
+      if dias <= 86400
+         json_reponse[i]={
+          id: workshop.id,
+          folio: workshop.folio,
+          dias: dias
+        }
+        i=i+1
 
-    if dias < 1
-      render json: @workshop
-    else
-      render json: @workshop
+        render json: json_reponse
+      else
+      end
     end
+    
+
   end
 end
