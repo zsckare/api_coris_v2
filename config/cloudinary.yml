@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: dttuj6iv1
+  api_key: '626489617795249'
+  api_secret: zdAbLdG6Ppy14iKkrG42W25syjA
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: dttuj6iv1
+  api_key: '626489617795249'
+  api_secret: zdAbLdG6Ppy14iKkrG42W25syjA
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: dttuj6iv1
+  api_key: '626489617795249'
+  api_secret: zdAbLdG6Ppy14iKkrG42W25syjA
+  enhance_image_tag: true
+  static_image_support: false
