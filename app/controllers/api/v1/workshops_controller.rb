@@ -8,7 +8,7 @@ class api::V1::WorkshopsController < ApplicationController
     if dias < 1
       render json: @workshop
     else
-      render status: :unprocessable_entity
+      render json: @workshop
     end
   end
 end
