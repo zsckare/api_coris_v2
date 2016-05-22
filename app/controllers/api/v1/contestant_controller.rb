@@ -28,7 +28,7 @@ class Api::V1::ContestantsController < Api::V1::ApplicationController
 
     
       if @contestant.save
-        render json: @contestant
+         render json:  @contestant
       else
         render json: @contestant.errors
       end
@@ -67,6 +67,6 @@ class Api::V1::ContestantsController < Api::V1::ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def contestant_params
-      params.permit(:learn,:url_image,:workshop,:userid)
+      params.require(:contestant).permit(:learn,:url_image,:workshop,:userid)
     end
 end
