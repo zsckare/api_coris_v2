@@ -26,15 +26,13 @@ class Api::V1::ContestantsController < Api::V1::ApplicationController
   def create
     @contestant = Contestant.new(contestant_params)
 
-    respond_to do |format|
+    
       if @contestant.save
-        format.html { redirect_to @contestant, notice: 'Contestant was successfully created.' }
-        format.json { render :show, status: :created, location: @contestant }
+         render :json  @contestant
       else
-        format.html { render :new }
-        format.json { render json: @contestant.errors, status: :unprocessable_entity }
+        render json: @contestant.errors
       end
-    end
+    
   end
 
   # PATCH/PUT /contestants/1
@@ -69,6 +67,6 @@ class Api::V1::ContestantsController < Api::V1::ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def contestant_params
-      params.require(:contestant).permit(:learn,:url_image,:workshop,:userid)
+      params.permit(:learn,:url_image,:workshop,:userid)
     end
 end
