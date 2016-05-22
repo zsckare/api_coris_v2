@@ -11,15 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160505011314) do
+ActiveRecord::Schema.define(version: 20160522151348) do
 
   create_table "contestants", force: :cascade do |t|
     t.integer  "learn"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.string   "image"
     t.integer  "workshop_id"
     t.string   "userid"
+    t.string   "url_image"
+    t.integer  "workshop"
   end
 
   add_index "contestants", ["workshop_id"], name: "index_contestants_on_workshop_id"

@@ -69,6 +69,6 @@ class Api::V1::ContestantsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def contestant_params
-      params.require(:contestant).permit(:learn,:image)
+      params.require(:contestant).permit(:learn,:url_image,:workshop)
     end
 end
