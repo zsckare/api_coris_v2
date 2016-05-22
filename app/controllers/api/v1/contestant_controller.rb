@@ -1,4 +1,4 @@
-class Api::V1::ContestantsController < ApplicationController
+class Api::V1::ContestantsController < Api::V1::ApplicationController
   before_action :set_contestant, only: [:show, :edit, :update, :destroy]
 
   # GET /contestants
@@ -69,6 +69,6 @@ class Api::V1::ContestantsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def contestant_params
-      params.require(:contestant).permit(:learn,:url_image,:workshop)
+      params.require(:contestant).permit(:learn,:url_image,:workshop,:userid)
     end
 end
