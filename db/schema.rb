@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160522151348) do
+ActiveRecord::Schema.define(version: 20160522190554) do
 
   create_table "contestants", force: :cascade do |t|
     t.integer  "learn"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20160522151348) do
     t.string   "userid"
     t.string   "url_image"
     t.integer  "workshop"
+    t.string   "asistentes"
   end
 
   add_index "contestants", ["workshop_id"], name: "index_contestants_on_workshop_id"
