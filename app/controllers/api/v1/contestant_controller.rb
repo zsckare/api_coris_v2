@@ -28,7 +28,7 @@ class Api::V1::ContestantsController < Api::V1::ApplicationController
 
     
       if @contestant.save
-         render :json  @contestant
+        render json: @contestant
       else
         render json: @contestant.errors
       end
