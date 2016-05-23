@@ -4,12 +4,15 @@ class WorkshopsController < ApplicationController
   # GET /workshops
   # GET /workshops.json
   def index
-    @workshops = Workshop.all
+    @workshops = Workshop.all.paginate(page: params[:page], per_page: 7)  
   end
 
   # GET /workshops/1
   # GET /workshops/1.json
   def show
+    @asistentes = Contestant.where(workshop: @workshop.id).where(userid: 0)
+    @docente = Contestant.where(workshop: @workshop.id).where(userid: "1")
+
   end
 
   # GET /workshops/new

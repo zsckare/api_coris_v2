@@ -21,9 +21,10 @@ gem 'responders', '~> 2.0'
 #Cors
 gem 'rack-cors',
 	require: 'rack/cors'
-
+#Manejo de usuarios
 gem 'devise'
-
+#paginacion de informacion
+gem 'will_paginate', '~> 3.0', '>= 3.0.7'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 

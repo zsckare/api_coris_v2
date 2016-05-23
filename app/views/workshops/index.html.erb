@@ -1,25 +1,43 @@
-<h1>Listing Workshops</h1>
+<div class="row">
+  <div class="col s12 m12 l12">
+      <div class="row">
+    <h3 class="center-align">Talleres</h3>
 
-<table>
-  <thead>
-    <tr>
-      <th>Folio</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+    <div class="row ">
+      <div class="col s12 m12 l12 padding-largo">
+              <table class="table">
+        <thead>
+          <tr>
+            <th>Folio</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @workshops.each do |workshop| %>
+            <tr>
+              <td><%= workshop.folio %></td>
+              <td class="right" ><%= link_to '', workshop, class: 'btn blue ion-search' %>
+              <%= link_to '', edit_workshop_path(workshop), class: 'btn dark ion-edit' %>
+              <%= link_to '', workshop, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn red ion-trash-b' %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>  
+      </div>
+    </div>
 
-  <tbody>
-    <% @workshops.each do |workshop| %>
-      <tr>
-        <td><%= workshop.folio %></td>
-        <td><%= link_to 'Show', workshop %></td>
-        <td><%= link_to 'Edit', edit_workshop_path(workshop) %></td>
-        <td><%= link_to 'Destroy', workshop, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+    <div class="row">
+       <%= will_paginate @workshops %>
+    </div>
 
-<br>
+    <div class="row">
+      <div class="col s12 m12 l12">
+        
+      <%= link_to 'Nuevo Taller', new_workshop_path, class: 'btn accent' %>
+        
+      </div>
+    </div>
 
-<%= link_to 'New Workshop', new_workshop_path %>
+  </div>
+  </div>
+</div>

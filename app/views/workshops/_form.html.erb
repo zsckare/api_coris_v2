@@ -10,12 +10,17 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :folio %><br>
+  <div class="row">
+  <div class="input-field col s12 m12 l4 offset-l4">
+    <%= f.label :folio %>
     <%= f.text_field :folio %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+</div>
+
+  <div class="row">
+  <div class="center-align">
+    <%= f.submit @msg, class: 'btn dark'%>
+  </div>
+    
   </div>
 <% end %>

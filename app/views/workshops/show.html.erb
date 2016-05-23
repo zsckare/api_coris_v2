@@ -1,8 +1,41 @@
+<div class="row">
+	<div class="row">
+		<h3 class="center-align">
+			Detalles del Taller
+		</h3>
+	</div>
+	<div class="row">
+		<p class="padding-largo">
+		  <strong>Folio:</strong>
+		  <%= @workshop.folio %>
+		</p>
+	</div>
+	<div class="row">
+		<div class="col s12 m12 l3">
+			<div class="row">
+				<div class="padding-largo">
+					<p>Asistentes: <%=@docente.take.asistentes%></p>	
+				</div>
+			</div>
+			<div class="row">
+				<div class="padding-largo">
+					<div class="row">
+						<div class="col s5 m5 l12">
+							<%= image_tag @docente.take.url_image, class: 'responsive-img' %>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col s12 m12 l9">
+			<% @asistentes.each do |asistente| %>
+				<div class="row">
+					<%= image_tag asistente.take.url_image, class: 'responsive-img' %>
+				</div>
+			<%end%>
+		</div>
+	</div>
+</div>
 
-<p>
-  <strong>Folio:</strong>
-  <%= @workshop.folio %>
-</p>
 
-<%= link_to 'Edit', edit_workshop_path(@workshop) %> |
-<%= link_to 'Back', workshops_path %>
+
