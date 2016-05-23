@@ -22,7 +22,7 @@ gem 'responders', '~> 2.0'
 gem 'rack-cors',
 	require: 'rack/cors'
 
-
+gem 'devise'
 
 gem 'sdoc', '~> 0.4.0', group: :doc
 

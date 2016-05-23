@@ -2,13 +2,55 @@
 <html>
 <head>
   <title>CorisApiV2</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
 </head>
-<body>
+<body class="grey lighten-5" >
 
-<%= yield %>
+	<%=render 'partials/nav' %>
 
+	
+  	<%if notice%>
+	    <div id="notice_wrapper">
+	      <p class="notice"><%=notice%></p>
+	    </div>
+	<%elsif alert%>
+	    <div id="notice_wrapper">
+	      <p class="alert"><%=alert%></p>
+	    </div>
+	<%end%>
+	<div class="container">
+		<div class="padding-largo card">
+			<%= yield %>	
+		</div>
+	</div>
+
+    <footer class="page-footer bottom primary">
+        <div class="footer-copyright">
+            <div class="container">
+            © 2016 Copyright Text
+            </div>
+        </div>
+    </footer>
+
+<script src="http://code.jquery.com/jquery-2.2.0.min.js" ></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
+  <script>
+   $('.datepicker').pickadate({
+    format: "yyyy-mm-dd"
+   });
+   $(".button-collapse").sideNav();
+  </script>
+  <script>
+  $(document).ready(function() {
+
+    setTimeout(function() {
+      $("#notice_wrapper").slideUp();
+    }, 3000);
+  });
+</script>
 </body>
 </html>

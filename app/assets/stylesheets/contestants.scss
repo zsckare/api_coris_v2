@@ -1,3 +1,101 @@
 // Place all the styles related to the Contestants controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+$primary:#c51162;
+$dark:#880e4f;
+$accent:#1e88e5;
+$white:#FFFFFF;
+$border: #8bc6db;
+
+.padding-largo{
+	padding:1.2em;
+}
+.bottom{
+	position:absolute;
+	bottom:0;
+	left:0;
+	width:100%;
+}
+.accent{
+	background: $accent !important;
+}
+.primary{
+	background: $primary !important;
+}
+
+
+
+.notices, .alerts{
+
+  border-radius: 2px;
+  bottom: 10;
+  width: auto;
+  clear: both;
+  margin-top: 10px;
+  position: relative;
+  max-width: 100%;
+  height: 80px;
+  line-height: 60px;
+  background-color: #323232;
+  padding: 0 25px;
+  font-size: 1.1rem;
+  font-weight: 300;
+  color: #fff;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: space-between;
+  justify-content: space-between; 
+}
+
+.pagination {
+  text-align: center;
+  margin: 0 0 3em 0;
+  a, .previous_page, .current, .next_page {
+    font-size: 1.2rem;
+    padding: 0 10px;
+    line-height: 30px;
+    border-radius: 2px;
+    text-align: center; 
+    color: $dark;
+    &:hover {
+      background: #2196F3 ;
+      color: $white;
+    }
+  }
+  .current {
+    background-color: #0277BD ; 
+    color: #fff;
+    &:hover{
+      cursor:pointer;
+    }
+  }
+  .disabled {
+    color: #999;
+    &:hover {
+      color: #999;
+      background: $white;
+    }
+  }
+}
+.separator{
+  border-top: 1px solid $border;
+}
+#notice_wrapper{
+  position: absolute;
+  top: 4.2em;
+  width: 100%;
+  z-index: 10000;
+  background: rgba(244,67,54,0.9);
+  .notice, .alert{
+    text-align: center;
+    color: #fff;
+  }
+}

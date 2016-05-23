@@ -1,0 +1,39 @@
+<div class="row">
+  <div class="row">
+    <h3 class="center-align">Iniciar Sesion</h3>
+  </div>
+  <div class="row">
+
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <div class="row">
+      <div class="input-field col s12 m12 l4 offset-l4">
+        <%= f.label :email %>
+        <%= f.email_field :email, autofocus: true %>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="input-field col s12 m12 l4 offset-l4">
+        <%= f.label :password %>
+        <%= f.password_field :password, autocomplete: "off" %>
+      </div>
+    </div>
+    <% if devise_mapping.rememberable? -%>
+      <div class="row">
+        <div class="input-field col s12 m12 l4 offset-l4">
+          <%= f.check_box :remember_me %>
+          <%= f.label :remember_me, 'Recordar Datos' %>
+        </div>
+      </div>
+
+    <% end -%>
+
+    <div class="row">
+      <div class="center-align">
+        <%= f.submit "Iniciar Sesion", class: 'btn accent' %>
+      </div>
+    </div>
+  <% end %>
+    
+  </div>
+</div>
