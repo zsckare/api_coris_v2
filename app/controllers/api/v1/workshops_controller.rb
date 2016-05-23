@@ -1,4 +1,4 @@
-class Api::V1::WorkshopsController < ApplicationController
+class Api::V1::WorkshopsController < Api::V1::ApplicationController
 
   def validate
     @workshops = Workshop.where(folio: params[:folio])
